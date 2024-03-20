@@ -1,4 +1,6 @@
-from django.urls import path
+from django.urls import path, include
+from allauth.socialaccount import providers
+
 from . import views
 
 urlpatterns = [
@@ -7,4 +9,6 @@ urlpatterns = [
     path('login/', views.loginPage, name='login'),
     path('signup/', views.signup, name='signup'),
     path('logout/', views.logoutUser, name='logout'),
+    path('accounts/', include('allauth.urls')),
+    #path('accounts/', include(providers.registry.get)),
 ]
