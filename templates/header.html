@@ -104,16 +104,16 @@
                     
                 </li>
                 <li class="header__navbar-item">
-                    <a href="{% url 'blog' %}" class="header__navbar-link">Blog</a>
+                    <a href="#" class="header__navbar-link">Blog</a>
                 </li>
                 <li class="header__navbar-item">
-                    <a href="{% url 'supportPage' %}" class="header__navbar-link">Contact</a>
+                    <a href="#" class="header__navbar-link">Contact</a>
                 </li>
                 {% if request.user.is_authenticated %}
                     {% if request.user.role == 'ADMIN' %}
                         <li class="header__account">
                             <div class="header__account-wrapper">
-                                <a href="{% url 'admin+' %}" class="ref__wrapper">
+                                <a href="#" class="ref__wrapper">
                                     <img src="{% static 'img/blog/avatar.svg' %}" alt="" class="header__account-img">
                                     <div class="header__account-info">
                                         <div class="header__account-name">@Dmin</div>
@@ -142,8 +142,8 @@
                     </li>
                     {% else %}
                         <li class="header__account">
-                            <div href="{% url 'profile' request.user.id %}" class="header__account-wrapper">
-                                <a href="{% url 'profile' request.user.id %}" class="ref__wrapper">
+                            <div href="#" class="header__account-wrapper">
+                                <a href="#" class="ref__wrapper">
                                     <img src="{% static 'img/blog/avatar.svg' %}" alt="" class="header__account-img">
                                     <div class="header__account-info">
                                         <div class="header__account-name">{{ request.user.patient }}</div>
@@ -158,7 +158,7 @@
                     {% endif %}
                 {% else %}
                 <li class="header__navbar-item">
-                    <a href="{% url 'login' %}" class="header__navbar-btn btn_login">LOGIN</a>
+                    <a href="{% url 'login' %}" class="btn_login">LOGIN</a>
                 </li>
                 <li class="header__navbar-item">
                     <a href="{% url 'signup' %}" class="header__navbar-btn btn_signup">SIGN UP</a>
