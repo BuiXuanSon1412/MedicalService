@@ -1,5 +1,5 @@
-{% load static %}
 {% load socialaccount %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +22,7 @@
     <div class="main">
         <div class="grid ">
             <div class="row no-gutters">
-                <div class="col l-6 form-wrapper">
+                <div class="col l-6 form-wrapper" style="display: flex; flex-direction: column; align-items: center;">
                     <a href="{% url 'home' %}" class="form__return-btn">
                         <img src="{% static 'img/login/return-btn.png' %}" alt="">
                     </a>
@@ -69,20 +69,29 @@
 
                         <span class="form-border"><span class="bold">Login</span> with Others</span>
                         <span class="form-line"></span>
-                        <a href="{% provider_login_url 'google' %}" class="form-social-login form-submit">
-                            <img class="form-social-login__icon" src="{% static 'img/login/google 1.png'%}" alt="">
-                            <div class="form-social-login__text">Login with <span class="bold">Google</span></div>
-                        </a>
-                        <a href="#" class="form-social-login">
-                            <img src="{% static 'img/login/facebook 1.png'%}" alt="" class="form-social-login__icon">
-                            <div class="form-social-login__text">Login with <span class="bold">Facebook</span></div>
-                        </a>
-
+                    </form>
+                    <div class="" style="display: flex; flex-direction: column; align-items: center; width: 364px;">
+                        <form class="form" action="{% provider_login_url 'google' %}" method="POST">
+                            {% csrf_token %}
+                            <button class="form-submit form-social-login">
+                                <img class="form-social-login__icon" src="{% static 'img/login/google 1.png'%}" alt="">
+                                <div class="form-social-login__text">Login with <span class="bold">Google</span></div>
+                            </button>
+                        </form>
+                        <form class="form" action="" method="POST">
+                            {% csrf_token %}
+                            <button class="form-submit form-social-login">
+                                <img src="{% static 'img/login/facebook 1.png'%}" alt=""
+                                    class="form-social-login__icon">
+                                <div class="form-social-login__text">Login with <span class="bold">Facebook</span></div>
+                            </button>
+                        </form>
                         <a href="{% url 'signup' %}" class="sign-up-link">or <span class="green bold">Sign up</span>
                             here</a>
                         <div class="sign-up-line"></div>
 
-                    </form>
+                    </div>
+
                 </div>
                 <div class="col l-6">
                     <div class="form-decorator">
