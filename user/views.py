@@ -5,6 +5,7 @@ from .models import User
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from service.models import Membership, Patient
 
 def home(request):
     return render(request, 'user/home.html')

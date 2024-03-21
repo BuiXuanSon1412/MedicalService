@@ -78,7 +78,7 @@
                                 <div class="form-social-login__text">Login with <span class="bold">Google</span></div>
                             </button>
                         </form>
-                        <form class="form" action="" method="POST">
+                        <form class="form" action="{% provider_login_url 'facebook' %}" method="POST">
                             {% csrf_token %}
                             <button class="form-submit form-social-login">
                                 <img src="{% static 'img/login/facebook 1.png'%}" alt=""
